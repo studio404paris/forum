@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+        php-httpd:
+                image: php:7.4-apache
+                ports:
+                        - "80:80"
+                volumes:
+                        -  "./DocumentRoot:/var/www/html"
+        mariadb:
+                image: mariadb:10.5
+                volumes:
+                        - db-maria:/var/lib/mysql
+                environment:
+                        tz: "Europe/Paris"
+                        MYSQL_ALLOW_EMPTY_PASSWORD: "no"
+                        MYSQL_ROOT_PASSWORD: "root"
+                        MYSQL_USER: "root"
+                        MYSQL_PASSWORD: "root" 
+                        MYSQL_DATABASE: "test"
+        phpmyadmin:
+                image: phpmyadmin/phpmyadmin
+                links:
+                        - "mariadb:db"
+                ports: 
+                        - "8081:80"
+volumes:
+        db-maria:
+
+
+        
