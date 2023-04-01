@@ -1,3 +1,5 @@
+<?php  include 'actions/signupAction.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <?php include 'includes/head.php'; ?>
@@ -13,9 +15,13 @@
                 <h1 class="font-weight-bold ">Inscription</h1>
                 <p>Enregistrez vous pour pouvoir acceder à nos services</p>
                 <hr class="hr" />
-        
             </div>
             <form class="text-center" method="POST">
+                <?php 
+                    if(isset($errorMsg)){
+                        echo '<div class="alert alert-danger" role="alert">'.$errorMsg.'</div>';
+                    }
+                ?>
                 <div class="mb-3 m-2">
                     <label for="exampleInputEmail1" class="form-label h5">Pseudo</label>
                     <input type="text" class="form-control" name="pseudo">
