@@ -2,11 +2,15 @@ version: "3"
 
 services:
         php-httpd:
+                build:
+                        context: .
+                        dockerfile: Dockerfile
                 image: php:7.4-apache
                 ports:
                         - "80:80"
                 volumes:
                         -  "./DocumentRoot:/var/www/html"
+                
         mariadb:
                 image: mariadb:10.5
                 volumes:
