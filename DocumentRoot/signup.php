@@ -3,14 +3,25 @@
 <?php include 'includes/head.php'; ?>
 <body class="bg-dark">
     <section class="container">
+<<<<<<< HEAD
         <div class="row m-5 p-5 bg-light arrondi_card ">
+=======
+        <div class="row m-5 p-5 bg-light arrondi_card animate__animated animate__bounceInDown">
+>>>>>>> dev
             <div class="mb-3 d-flex justify-content-center ">
                 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
                 <lottie-player src="https://assets6.lottiefiles.com/datafiles/eAbFb2vqjxlD8oV/data.json"  background="transparent"  speed="1"  style="width: 150px; height: 150px;"    autoplay></lottie-player> 
             </div>
+<<<<<<< HEAD
             <div class="mb-3 ">
                 <hr class="hr" />
                 <h1 class="text-center font-weight-bold ">Inscription</h1>
+=======
+            <div class="mb-3 text-center ">
+                <hr class="hr" />
+                <h1 class="font-weight-bold ">Inscription</h1>
+                <p>Enregistrez vous pour pouvoir acceder à nos services</p>
+>>>>>>> dev
                 <hr class="hr" />
          
             </div>
