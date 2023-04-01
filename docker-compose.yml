@@ -23,7 +23,7 @@ services:
                 links:
                         - "mariadb:db"
                 ports: 
-                        - "8081:80"
+                        - "81:80"
 volumes:
         db-maria:
 
