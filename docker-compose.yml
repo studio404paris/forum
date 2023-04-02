@@ -1,35 +1,48 @@
-version: "3"
+version: '3.7'
 
-services:
-        php-httpd:
-                build:
-                        context: .
-                        dockerfile: Dockerfile
-                image: php:7.4-apache
-                ports:
-                        - "80:80"
-                volumes:
-                        -  "./DocumentRoot:/var/www/html"
-                
-        mariadb:
-                image: mariadb:10.5
-                volumes:
-                        - db-maria:/var/lib/mysql
-                environment:
-                        tz: "Europe/Paris"
-                        MYSQL_ALLOW_EMPTY_PASSWORD: "no"
-                        MYSQL_ROOT_PASSWORD: "root"
-                        MYSQL_USER: "root"
-                        MYSQL_PASSWORD: "root" 
-                        MYSQL_DATABASE: "test"
-        phpmyadmin:
-                image: phpmyadmin/phpmyadmin
-                links:
-                        - "mariadb:db"
-                ports: 
-                        - "81:80"
+services: 
+  db:
+    image: mariadb:10
+    container_name: db_lamp
+    restart: always
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./backups:/backups
+    environment:
+      MYSQL_DATABASE: test
+      MYSQL_USER: user 
+      MYSQL_PASSWORD: user
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'no'
+      MYSQL_ROOT_PASSWORD: root
+
+  web:
+    image: "php:7.4-apache"
+    container_name: apache2
+    restart: always
+    depends_on: ['db']
+    ports: ['80:80']
+    links: ['db:db']
+    volumes:
+      - './DocumentRoot:/var/www/html'
+    environment:
+      MYSQL_DB_HOST: db
+      MYSQL_DATABASE: test
+      MYSQL_USER: user 
+      MYSQL_PASSWORD: user
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    restart: always
+    depends_on: ['db']
+    ports: ['81:80']
+    links: ['db:db']
+    environment:
+      - MYSQL_DB_HOST=db
+      - MYSQL_USER=user 
+      - MYSQL_PASSWORD=user
+
+
+
 volumes:
-        db-maria:
-
-
-        
+  db_data: {}
