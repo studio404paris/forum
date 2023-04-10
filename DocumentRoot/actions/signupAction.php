@@ -31,6 +31,10 @@ if(isset($_POST['validate'])){
             $_SESSION ['lasname'] = $usersInfos['pseudo'];
             $_SESSION ['lastname'] = $usersInfos['nom'];
             $_SESSION ['firstname'] = $usersInfos['prenom'];
+
+            $successMsg = "Vous êtes bien inscrit";
+
+            
         // Redirection vers la page d'accueil
             header('Location: index.php');
 

@@ -1,3 +1,5 @@
+<?php require_once('actions/signupAction.php');
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +9,12 @@
     <title>Document</title>
 </head>
 <body>
+    <?php
 
-<h1> HEYYYYYYYYYYYY BG</h1>
-    
+if(isset($successMsg)){
+    echo '<div class="alert alert-success" role="alert">'.$successMsg.'</div>';
+}
+    ?>
+    <h1>Prout</h1>
 </body>
 </html>

@@ -21,6 +21,7 @@
                     if(isset($errorMsg)){
                         echo '<div class="alert alert-danger" role="alert">'.$errorMsg.'</div>';
                     }
+
                 ?>
                 <div class="mb-3 m-2">
                     <label for="exampleInputEmail1" class="form-label h5">Pseudo</label>
