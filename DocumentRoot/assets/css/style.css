@@ -12,7 +12,9 @@
     scale: 2 !important;
     transition: all .2s ease-in-out !important;
 }
-
+.nav-link:active{
+    color: #6c5ce7 !important;
+}
 
 
 /* 
