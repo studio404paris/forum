@@ -1,13 +1,12 @@
-<?php require('actions/loginAction.php'); ?> 
+<?php  include 'actions/securityAction.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connexion</title>
+    <title>Publier un article</title>
 </head>
-<body>
 <?php include 'includes/head.php'; ?>
 <?php include 'includes/navbar.php'; ?>
 <body class="bg-dark">
@@ -19,8 +18,8 @@
             </div>
             <div class="mb-3 text-center ">
                 <hr class="hr" />
-                <h1 class="font-weight-bold ">Connexion</h1>
-                <p>Connectez vous pour pouvoir acceder à nos services</p>
+                <h1 class="font-weight-bold ">Publiez une question </h1>
+                <p>Vous avez une question ? Remplissez ce formulaire et la communautée y répondra sous peu !</p>
                 <hr class="hr" />
             </div>
             <form class="text-center" method="POST">
@@ -31,22 +30,21 @@
 
                 ?>
                 <div class="mb-3 m-2">
-                    <label for="exampleInputEmail1" class="form-label h5">Pseudo</label>
-                    <input type="text" class="form-control" name="pseudo">
+                    <label for="exampleInputEmail1" class="form-label h5">Titre de la question</label>
+                    <input type="text" class="form-control" name="title">
                 </div>
                 <div class="mb-3 m-2">
-                    <label for="exampleInputPassword1" class="form-label h5">Mot de passe</label>
-                    <input type="password" class="form-control" name="password">
+                    <label for="exampleInputEmail1" class="form-label h5">Decription de la question</label>
+                    <textarea type="text" class="form-control" name="description"></textarea>
                 </div>
-                <button type="submit" class="btn btn_valider m-2" name="validate">Se connecter</button>
-                <a href="signup.php" class="grow" >
-                    <p>Je crée mon compte</p>
-                </a>
+                <div class="mb-3 m-2">
+                    <label for="exampleInputEmail1" class="form-label h5">Question</label>
+                    <textarea type="text" class="form-control" name="content"></textarea>
+                </div>
+                <button type="submit" class="btn btn_valider m-2" name="validate">Publier la question</button>
+
           </form>
         </div>
     </section>
-</body>
-</html>
-
 </body>
 </html>

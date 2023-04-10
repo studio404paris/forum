@@ -8,6 +8,7 @@
     <title>Inscription</title>
 </head>
 <?php include 'includes/head.php'; ?>
+<?php include 'includes/navbar.php'; ?>
 <body class="bg-dark">
     <section class="container">
         <div class="row m-5  p-5 bg-light arrondi_card animate__animated animate__bounceInDown">

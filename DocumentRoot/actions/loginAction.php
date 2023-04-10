@@ -16,8 +16,10 @@ if(isset($_POST['validate'])){
        //recuperer les infos de l'user
          if($checkIfUserExists-> rowCount() > 0){
             $userIfos = $checkIfUserExists->fetch(); 
-            
+            //verifie que le mot de passe est correct
             if(password_verify($user_password, $userIfos['mdp'])){
+
+
                 $_SESSION ['auth'] = true;
                 $_SESSION ['id'] = $usersInfos['id'];
                 $_SESSION ['lasname'] = $usersInfos['pseudo'];
