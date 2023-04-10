@@ -1,12 +1,13 @@
-<?php  include 'actions/signupAction.php'; ?>
+<?php require('actions/loginAction.php'); ?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscription</title>
+    <title>Connexion</title>
 </head>
+<body>
 <?php include 'includes/head.php'; ?>
 <body class="bg-dark">
     <section class="container">
@@ -17,8 +18,8 @@
             </div>
             <div class="mb-3 text-center ">
                 <hr class="hr" />
-                <h1 class="font-weight-bold ">Inscription</h1>
-                <p>Enregistrez vous pour pouvoir acceder à nos services</p>
+                <h1 class="font-weight-bold ">Connexion</h1>
+                <p>Connectez vous pour pouvoir acceder à nos services</p>
                 <hr class="hr" />
             </div>
             <form class="text-center" method="POST">
@@ -33,23 +34,18 @@
                     <input type="text" class="form-control" name="pseudo">
                 </div>
                 <div class="mb-3 m-2">
-                    <label for="exampleInputEmail1" class="form-label h5">Nom</label>
-                    <input type="text" class="form-control" name="lastName">
-                </div>
-                <div class="mb-3 m-2">
-                    <label for="exampleInputEmail1" class="form-label h5">Prénom</label>
-                    <input type="text" class="form-control" name="firstName">
-                </div>
-                <div class="mb-3 m-2">
                     <label for="exampleInputPassword1" class="form-label h5">Mot de passe</label>
                     <input type="password" class="form-control" name="password">
                 </div>
-                <button type="submit" class="btn btn_valider m-2" name="validate">S'inscrire</button>
-                <a href="login.php" class="grow" >
-                    <p>J'ai déjà un compte je me connecte</p>
+                <button type="submit" class="btn btn_valider m-2" name="validate">Se connecter</button>
+                <a href="signup.php" class="grow" >
+                    <p>Je crée mon compte</p>
                 </a>
           </form>
         </div>
     </section>
+</body>
+</html>
+
 </body>
 </html>
